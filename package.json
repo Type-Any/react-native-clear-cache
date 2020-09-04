@@ -1,0 +1,39 @@
+{
+  "name": "react-native-clear-cache",
+  "version": "1.0.0",
+  "description": "This library is clear app cache for react native.",
+  "main": "index.js",
+  "files": [
+    "README.md",
+    "android",
+    "index.js",
+    "ios",
+    "react-native-clear-cache.podspec"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Type-Any/react-native-clear-cache.git",
+    "baseUrl": "https://github.com/Type-Any/react-native-clear-cache"
+  },
+  "author": {
+    "name": "seongjoojin",
+    "email": "evanjin@kakao.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "react-native",
+    "react-native-component",
+    "clear-cache",
+    "cache"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "^16.13.1",
+    "react-native": "^0.63.2"
+  }
+}
