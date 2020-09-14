@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91F7484425028C75008B5AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F7484325028C75008B5AAA /* AppDelegate.swift */; };
+		9137F8DF250FB84700C41D4E /* ClearCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9137F8DE250FB84700C41D4E /* ClearCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libClearCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libClearCache.a; path = "/Users/jinseongju/Documents/github/react-native-clear-cache/ios/build/Debug-iphoneos/libClearCache.a"; sourceTree = "<absolute>"; };
-		91F7484225028C74008B5AAA /* ClearCache-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClearCache-Bridging-Header.h"; sourceTree = "<group>"; };
-		91F7484325028C75008B5AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9137F8DD250FB82E00C41D4E /* libClearCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libClearCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9137F8DE250FB84700C41D4E /* ClearCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCache.swift; sourceTree = "<group>"; };
+		9137F8E0250FB85500C41D4E /* ClearCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCache.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,8 +42,9 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				91F7484325028C75008B5AAA /* AppDelegate.swift */,
-				91F7484225028C74008B5AAA /* ClearCache-Bridging-Header.h */,
+				9137F8E0250FB85500C41D4E /* ClearCache.h */,
+				9137F8DE250FB84700C41D4E /* ClearCache.swift */,
+				9137F8DD250FB82E00C41D4E /* libClearCache.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,7 +65,7 @@
 			);
 			name = ClearCache;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libClearCache.a */;
+			productReference = 9137F8DD250FB82E00C41D4E /* libClearCache.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +106,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91F7484425028C75008B5AAA /* AppDelegate.swift in Sources */,
+				9137F8DF250FB84700C41D4E /* ClearCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
