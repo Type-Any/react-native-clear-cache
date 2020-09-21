@@ -1,5 +1,5 @@
-import { NativeModules } from 'react-native';
+import { NativeModules } from "react-native";
 
-const { ReactNativeClearCache } = NativeModules;
+const { ClearCache } = NativeModules;
 
-export default ReactNativeClearCache;
+export default ClearCache;
