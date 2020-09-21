@@ -19,6 +19,10 @@
     "name": "seongjoojin",
     "email": "evanjin@kakao.com"
   },
+  "contributors": [
+    "seongjoo jin <evanjin@kakao.com>",
+    "sanghyeok hong <ghdtkdgur123@gmail.com>"
+  ],
   "license": "MIT",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
