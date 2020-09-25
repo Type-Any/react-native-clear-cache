@@ -1,6 +1,6 @@
 declare module "react-native-clear-cache" {
   export const ClearCache: {
-    getAppCacheSize: () => { value: string; unit: string };
+    getAppCacheSize: (callback: (size: number, unit: string) => void) => void;
     clearAppCache: () => void;
   };
   export default ClearCache;

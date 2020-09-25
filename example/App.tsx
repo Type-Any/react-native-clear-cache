@@ -1,6 +1,8 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
 import {Pressable, SafeAreaView, Text, StyleSheet, View} from 'react-native';
+
+import ClearCache from 'react-native-clear-cache';
 
 const styles = StyleSheet.create({
   button: {
@@ -28,6 +30,12 @@ const styles = StyleSheet.create({
 });
 
 function App(): JSX.Element {
+  const [size, setSize] = useState(0);
+
+  useEffect(() => {
+    ClearCache.getAppCacheSize((size, _) => setSize(size));
+  }, []);
+
   const handlePress = useCallback(() => console.log('press'), []);
 
   const {button, container, header, wrapper} = styles;
@@ -37,7 +45,7 @@ function App(): JSX.Element {
       <View>
         <View style={wrapper}>
           <Text style={header}>getAppCacheSize</Text>
-          <Text>{`size: 0`}</Text>
+          <Text>{`size: ${size}`}</Text>
         </View>
         <View style={wrapper}>
           <Text style={header}>clearAppCache</Text>
