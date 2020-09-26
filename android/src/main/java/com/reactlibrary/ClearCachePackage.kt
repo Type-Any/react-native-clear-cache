@@ -10,7 +10,7 @@ import com.facebook.react.uimanager.ViewManager
 
 class ClearCachePackage : ReactPackage {
     override fun createNativeModules(reactContext: ReactApplicationContext): MutableList<NativeModule> {
-        return mutableListOf(ClearCache(reactContext))
+        return mutableListOf(ClearCacheModule(reactContext))
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): MutableList<ViewManager<out View, out ReactShadowNode<*>>> {

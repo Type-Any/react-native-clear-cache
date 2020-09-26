@@ -36,7 +36,10 @@ function App(): JSX.Element {
     ClearCache.getAppCacheSize((size, _) => setSize(size));
   }, []);
 
-  const handlePress = useCallback(() => console.log('press'), []);
+  const handlePress = useCallback(
+    () => ClearCache.clearAppCache(() => console.log('success')),
+    [],
+  );
 
   const {button, container, header, wrapper} = styles;
 
