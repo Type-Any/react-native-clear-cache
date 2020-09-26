@@ -14,20 +14,25 @@ class ClearCacheModule(reactContext: ReactApplicationContext) : ReactContextBase
         return "ClearCache"
     }
 
-    private fun getDirSize(dir: File?): Long {
-        var size: Long = 0
-        return if (dir == null || dir.isDirectory) {
-            size
-        } else {
-            for (file in dir.listFiles()) {
-                if (file.isFile) {
-                    size += file.length()
-                } else if (file.isDirectory) {
-                    size += getDirSize(file)
+    private fun getDirSize(file: File?): Long {
+        if (file == null) {
+            return 0
+        }
+
+        if (file.isFile) {
+            return file.length()
+        } else if (file.isDirectory) {
+            var size: Long = 0
+            for (listFile in file.listFiles()) {
+                if (listFile.isFile) {
+                    size += listFile.length()
+                } else if (listFile.isDirectory) {
+                    size += getDirSize(listFile)
                 }
             }
             size
         }
+        return 0
     }
 
     private fun getExternalCacheDir(): File? {
@@ -48,22 +53,24 @@ class ClearCacheModule(reactContext: ReactApplicationContext) : ReactContextBase
         clearCacheDir(externalCacheDir)
     }
 
-    private fun clearCacheDir(dir: File?) {
-        if (dir == null || dir.isFile) {
+    private fun clearCacheDir(file: File?) {
+        if (file == null) {
             return
         }
+
         try {
-            for (file in dir.listFiles()) {
-                if (file.isDirectory) {
-                    clearCacheDir(file)
-                } else {
-                    file.delete()
+            if (file.isFile) {
+                file.delete()
+            } else if (file.isDirectory) {
+                for (listFile in file.listFiles()) {
+                    if (listFile.isDirectory) {
+                        clearCacheDir(listFile)
+                    }
+                    listFile.delete()
                 }
             }
         } catch (e: Exception) {
             e.printStackTrace()
-        } finally {
-            return
         }
     }
 
