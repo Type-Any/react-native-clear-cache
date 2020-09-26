@@ -81,7 +81,7 @@ class ClearCacheModule(reactContext: ReactApplicationContext) : ReactContextBase
 
     @ReactMethod
     fun clearAppCache(callback: Callback) {
-        val coroutine:ClearCacheCoroutine = ClearCacheCoroutine(this, callback)
+        val coroutine: ClearCacheCoroutine = ClearCacheCoroutine(this, callback)
         coroutine.clear()
     }
 }

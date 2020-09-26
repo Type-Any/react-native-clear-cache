@@ -1,6 +1,5 @@
 package com.reactlibrary
 
-import android.util.Log
 import com.facebook.react.bridge.Callback
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
