@@ -30,7 +30,7 @@ class ClearCacheModule(reactContext: ReactApplicationContext) : ReactContextBase
                     size += getDirSize(listFile)
                 }
             }
-            size
+            return size
         }
         return 0
     }

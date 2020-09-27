@@ -3,6 +3,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {Pressable, SafeAreaView, Text, StyleSheet, View} from 'react-native';
 
 import ClearCache from 'react-native-clear-cache';
+import RNFS from 'react-native-fs';
 
 const styles = StyleSheet.create({
   button: {
@@ -36,10 +37,27 @@ function App(): JSX.Element {
     ClearCache.getAppCacheSize((size, _) => setSize(size));
   }, []);
 
-  const handlePress = useCallback(
-    () => ClearCache.clearAppCache(() => console.log('success')),
+  const handleClearCachePress = useCallback(
+    () =>
+      ClearCache.clearAppCache(() =>
+        ClearCache.getAppCacheSize((size, _) => setSize(size)),
+      ),
     [],
   );
+
+  const handleCreateFilePress = useCallback(() => {
+    RNFS.writeFile(
+      `${RNFS.CachesDirectoryPath}/test.txt}`,
+      'Lorem ipsum dolor sit amet',
+      'utf8',
+    )
+      .then(() => {
+        ClearCache.getAppCacheSize((size, _) => setSize(size));
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
 
   const {button, container, header, wrapper} = styles;
 
@@ -52,7 +70,13 @@ function App(): JSX.Element {
         </View>
         <View style={wrapper}>
           <Text style={header}>clearAppCache</Text>
-          <Pressable style={button} onPress={handlePress}>
+          <Pressable style={button} onPress={handleClearCachePress}>
+            <Text>Clear</Text>
+          </Pressable>
+        </View>
+        <View style={wrapper}>
+          <Text style={header}>createCacheFile</Text>
+          <Pressable style={button} onPress={handleCreateFilePress}>
             <Text>Clear</Text>
           </Pressable>
         </View>
