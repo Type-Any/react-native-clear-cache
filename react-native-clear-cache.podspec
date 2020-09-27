@@ -18,10 +18,11 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/Type-Any/react-native-clear-cache.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,c,m,swift}"
+  s.source_files = "ios/**/*.{h,m,swift}"
+  s.framework     = 'UIKit'
   s.requires_arc = true
 
-  s.dependency "React-Core"
+  s.dependency "React"
   # ...
   # s.dependency "..."
 end

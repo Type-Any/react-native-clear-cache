@@ -1,3 +1,5 @@
+import Foundation
+
 @objc(ClearCache)
 class ClearCache: NSObject {
   @objc func getAppCacheSize() {
