@@ -1,4 +1,4 @@
-#import "ClearCache.h"
+#import "ClearCacheBridge.h"
 #import <React/RCTBridgeModule.h>
 
 @interface RCT_EXTERN_MODULE(ClearCache, NSObject)
