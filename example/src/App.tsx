@@ -11,7 +11,7 @@ export default function App() {
   }, []);
 
   const handlePress = React.useCallback(() => {
-    ClearCache.clearCacheDir();
+    ClearCache.clearCacheDir().then(() => console.log('complete'));
   }, []);
 
   return (

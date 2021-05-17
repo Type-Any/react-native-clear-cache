@@ -4,6 +4,7 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.Promise
+import kotlinx.coroutines.*
 import java.io.File
 
 class ClearCacheModule(ClearCachePackage: ReactApplicationContext) :
@@ -31,6 +32,28 @@ class ClearCacheModule(ClearCachePackage: ReactApplicationContext) :
     return 0
   }
 
+  private fun clearFileRecursively(file: File?) {
+    if (file == null) return
+
+    if (file.isFile) file.delete()
+    else if (file.isDirectory) {
+      for (listFile in file.listFiles()) {
+        if (listFile.isDirectory) clearFileRecursively(listFile)
+        listFile.delete()
+      }
+    }
+  }
+
+  private fun clearCoroutine() = CoroutineScope(Dispatchers.IO).launch {
+    val cacheDir: File = mReactContext.cacheDir
+    val externalCacheDir: File? = mReactContext.externalCacheDir
+
+    val job1 = launch { clearFileRecursively(cacheDir) }
+    val job2 = launch { clearFileRecursively(externalCacheDir) }
+
+    joinAll(job1, job2)
+  }
+
   @ReactMethod
   fun getCacheDirSize(promise: Promise) {
     val cacheDir: File = mReactContext.cacheDir
@@ -44,7 +67,12 @@ class ClearCacheModule(ClearCachePackage: ReactApplicationContext) :
 
   @ReactMethod
   fun clearCacheDir(promise: Promise) {
-
+    try {
+      clearCoroutine()
+      promise.resolve(null)
+    } catch (e: RuntimeException) {
+      promise.reject(e)
+    }
   }
 
 }
