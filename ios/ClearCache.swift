@@ -1,8 +1,13 @@
 @objc(ClearCache)
 class ClearCache: NSObject {
-
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
+    
+    @objc(getCacheDirSize:withRejecter:)
+    func getCacheDirSize(resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock) -> Void {
+        resolve(0)
+    }
+    
+    @objc(clearCacheDir:withRejecter:)
+    func clearCacheDir(resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock) -> Void {
+        
     }
 }

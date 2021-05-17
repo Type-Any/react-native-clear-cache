@@ -1,18 +1,25 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
 import ClearCache from 'react-native-clear-cache';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [size, setSize] = React.useState(0);
 
   React.useEffect(() => {
-    ClearCache.multiply(3, 7).then(setResult);
+    ClearCache.getCacheDirSize().then(() => setSize(100));
+  }, []);
+
+  const handlePress = React.useCallback(() => {
+    ClearCache.clearCacheDir();
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>getCacheDirSize: {size}</Text>
+      <Pressable onPress={handlePress}>
+        <Text>clear</Text>
+      </Pressable>
     </View>
   );
 }

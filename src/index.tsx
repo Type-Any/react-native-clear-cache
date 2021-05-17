@@ -1,7 +1,8 @@
 import { NativeModules } from 'react-native';
 
 type ClearCacheType = {
-  multiply(a: number, b: number): Promise<number>;
+  getCacheDirSize(): Promise<void>;
+  clearCacheDir(): Promise<void>;
 };
 
 const { ClearCache } = NativeModules;
