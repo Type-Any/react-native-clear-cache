@@ -7,11 +7,11 @@ import com.facebook.react.uimanager.ViewManager
 
 
 class ClearCachePackage : ReactPackage {
-    override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        return listOf(ClearCacheModule(reactContext))
-    }
+  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+    return listOf(ClearCacheModule(reactContext))
+  }
 
-    override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return emptyList()
-    }
+  override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
+    return emptyList()
+  }
 }

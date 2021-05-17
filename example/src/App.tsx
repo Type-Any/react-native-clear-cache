@@ -7,7 +7,7 @@ export default function App() {
   const [size, setSize] = React.useState(0);
 
   React.useEffect(() => {
-    ClearCache.getCacheDirSize().then(() => setSize(100));
+    ClearCache.getCacheDirSize().then((v) => setSize(v));
   }, []);
 
   const handlePress = React.useCallback(() => {
