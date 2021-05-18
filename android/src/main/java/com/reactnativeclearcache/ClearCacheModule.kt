@@ -71,7 +71,7 @@ class ClearCacheModule(ClearCachePackage: ReactApplicationContext) :
       clearCoroutine()
       promise.resolve(null)
     } catch (e: RuntimeException) {
-      promise.reject(e)
+      promise.reject("Create Event Error", e)
     }
   }
 
