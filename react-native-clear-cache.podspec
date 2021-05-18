@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
 
   s.platforms    = { :ios => "10.0" }
-  s.source       = { :git => "https://github.com/shhong7757/react-native-clear-cache.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Type-Any/react-native-clear-cache.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 

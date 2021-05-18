@@ -36,13 +36,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/shhong7757/react-native-clear-cache",
+  "repository": "https://github.com/Type-Any/react-native-clear-cache",
   "author": "shhong <ghdtkdgur123@gmail.com> (https://github.com/shhong7757)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shhong7757/react-native-clear-cache/issues"
+    "url": "https://github.com/Type-Any/react-native-clear-cache/issues"
   },
-  "homepage": "https://github.com/shhong7757/react-native-clear-cache#readme",
+  "homepage": "https://github.com/Type-Any/react-native-clear-cache#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
