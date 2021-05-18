@@ -4,20 +4,28 @@ import { StyleSheet, View, Text, Pressable } from 'react-native';
 import ClearCache from 'react-native-clear-cache';
 
 export default function App() {
-  const [size, setSize] = React.useState(0);
+  const [cacheDirSize, setCacheDirSize] = React.useState(0);
+
+  function _getCacheDirSize() {
+    ClearCache.getCacheDirSize()
+      .then(setCacheDirSize)
+      .catch((e) => console.log(e));
+  }
 
   React.useEffect(() => {
-    ClearCache.getCacheDirSize().then((v) => setSize(v));
+    _getCacheDirSize();
   }, []);
 
   const handlePress = React.useCallback(() => {
-    ClearCache.clearCacheDir().then(() => console.log('complete'));
+    ClearCache.clearCacheDir()
+      .then(_getCacheDirSize)
+      .catch((e) => console.log(e));
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>getCacheDirSize: {size}</Text>
-      <Pressable onPress={handlePress}>
+      <Text>getCacheDirSize: {cacheDirSize}</Text>
+      <Pressable style={styles.button} onPress={handlePress}>
         <Text>clear</Text>
       </Pressable>
     </View>
@@ -34,5 +42,11 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginVertical: 20,
+  },
+  button: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    marginTop: 8,
+    backgroundColor: 'gray',
   },
 });
