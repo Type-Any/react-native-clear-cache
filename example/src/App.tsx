@@ -24,7 +24,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>getCacheDirSize: {foramtFileSize(cacheDirSize)}</Text>
+      <Text>size: {cacheDirSize}</Text>
+      <Text>file size: {foramtFileSize(cacheDirSize)}</Text>
       <Pressable style={styles.button} onPress={handlePress}>
         <Text>clear</Text>
       </Pressable>
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   button: {
     paddingHorizontal: 8,
     paddingVertical: 4,
-    marginTop: 8,
+    marginTop: 16,
     backgroundColor: 'gray',
   },
 });
