@@ -5,13 +5,13 @@ This library is clear app cache for react native.
 ## Installation
 
 ```sh
-npm install react-native-clear-cache
+npm install @type-any/react-native-clear-cache
 ```
 
 ## Usage
 
 ```js
-import ClearCache, { foramtFileSize } from 'react-native-clear-cache';
+import ClearCache, { foramtFileSize } from '@type-any/react-native-clear-cache';
 
 // ...
 
