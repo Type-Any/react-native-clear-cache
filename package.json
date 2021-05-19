@@ -1,5 +1,5 @@
 {
-  "name": "react-native-clear-cache",
+  "name": "@type-any/react-native-clear-cache",
   "version": "0.1.0",
   "description": "This library is clear app cache for react native.",
   "main": "lib/commonjs/index.js",
