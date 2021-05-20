@@ -9,7 +9,7 @@ const { ClearCache } = NativeModules;
 
 export default ClearCache as ClearCacheType;
 
-export function foramtFileSize(size: number, decimal: number = 4): string {
+export function formatFileSize(size: number, decimal: number = 4): string {
   if (size < 1024) return `${size} Bytes`;
 
   const arr = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];

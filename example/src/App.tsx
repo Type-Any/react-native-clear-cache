@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Pressable } from 'react-native';
-import ClearCache, { foramtFileSize } from 'react-native-clear-cache';
+import ClearCache, { formatFileSize } from 'react-native-clear-cache';
 
 export default function App() {
   const [cacheDirSize, setCacheDirSize] = React.useState(0);
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>size: {cacheDirSize}</Text>
-      <Text>file size: {foramtFileSize(cacheDirSize)}</Text>
+      <Text>file size: {formatFileSize(cacheDirSize)}</Text>
       <Pressable style={styles.button} onPress={handlePress}>
         <Text>clear</Text>
       </Pressable>
